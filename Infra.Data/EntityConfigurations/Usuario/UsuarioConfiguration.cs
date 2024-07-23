@@ -18,6 +18,7 @@ namespace Infra.Data.EntityConfigurations.Usuario
             builder.Property(p => p.matricula).HasMaxLength(6).IsRequired();
             builder.Property(p => p.password).HasMaxLength(70).IsRequired();
             builder.Property(p => p.permissao).HasMaxLength(20).IsRequired();
+            builder.Property(p => p.id_empresa).HasMaxLength(10).IsRequired();
 
             builder.HasData(
                 new Usuarios
@@ -33,7 +34,8 @@ namespace Infra.Data.EntityConfigurations.Usuario
                     perfil_usuario = "https://static.vecteezy.com/ti/vetor-gratis/p3/2387693-icone-do-perfil-do-usuario-vetor.jpg", 
                     matricula = "000000",
                     nome_empresa = "system",
-                    permissao = "admin"
+                    permissao = "admin",
+                    id_empresa = 1
                 }
            );
         }

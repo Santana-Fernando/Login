@@ -1,4 +1,5 @@
-﻿using Domain.Login.Entities;
+﻿using Domain.Empresa.Entidades;
+using Domain.Login.Entities;
 using Domain.Usuario.Entidades;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -7,7 +8,7 @@ namespace Application.Http
 {
     public class HttpResponse
     {
-        public Autenticacao Ok(Usuarios usuarios, string token)
+        public Autenticacao Ok(Usuarios usuarios, Empresa empresa, string token)
         {
             return new Autenticacao()
             {
@@ -20,7 +21,12 @@ namespace Application.Http
                 token = token,
                 perfil_usuario = usuarios.perfil_usuario,
                 statusCode = System.Net.HttpStatusCode.OK,
-                message = "OK"
+                message = "OK",
+                id_empresa =  empresa.id,
+                nome_Empresa = empresa.nome,
+                razao_social = empresa.razao_social,
+                cnpj = empresa.cnpj,
+                unidade = empresa.unidade
             };
         }
 

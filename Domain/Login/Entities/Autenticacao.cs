@@ -19,5 +19,10 @@ namespace Domain.Login.Entities
         public string? perfil_usuario { get; set; }
         public HttpStatusCode statusCode { get; set; }
         public string message { get; set; }
+        public int? id_empresa { get; set; }
+        public string? nome_Empresa { get; set; }
+        public string? razao_social { get; set; }
+        public string? cnpj { get; set; }
+        public string? unidade { get; set; }
     }
 }

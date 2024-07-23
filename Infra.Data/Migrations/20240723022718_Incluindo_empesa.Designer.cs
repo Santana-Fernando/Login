@@ -3,15 +3,17 @@ using System;
 using Infra.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace Infra.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240723022718_Incluindo_empesa")]
+    partial class Incluindo_empesa
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -87,7 +89,6 @@ namespace Infra.Data.Migrations
                         .HasColumnType("character varying(100)");
 
                     b.Property<int>("id_empresa")
-                        .HasMaxLength(10)
                         .HasColumnType("integer");
 
                     b.Property<string>("matricula")
@@ -132,7 +133,7 @@ namespace Infra.Data.Migrations
                             id = 1,
                             cargo = "suporte",
                             cpf = "11111111111",
-                            data_nascimento = new DateTime(2024, 7, 22, 23, 52, 56, 130, DateTimeKind.Local).AddTicks(3714),
+                            data_nascimento = new DateTime(2024, 7, 22, 23, 27, 18, 45, DateTimeKind.Local).AddTicks(1223),
                             email = "system@gmail.com",
                             id_empresa = 1,
                             matricula = "000000",

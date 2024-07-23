@@ -30,10 +30,11 @@ namespace Infra.Data.Repository.Login
                 var usuario = await _context.Usuarios.SingleOrDefaultAsync(u => u.email == login.email);
                 if (usuario != null)
                 {
-                    if(new BCrypter().VerifyPassword(login.password, usuario.password))
+                    var empesa = await _context.Empresa.SingleOrDefaultAsync(e => e.id == usuario.id_empresa);
+                    if (new BCrypter().VerifyPassword(login.password, usuario.password))
                     {
                         string token = new TokenAuthentication(_configuration).GenerateToken(login.email);
-                        return httpResponse.Ok(usuario, token);
+                        return httpResponse.Ok(usuario, empesa, token);
                     }
 
                     return httpResponse.Forbidden();

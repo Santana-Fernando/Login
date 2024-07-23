@@ -16,5 +16,6 @@ namespace Domain.Usuario.Entidades
         public string nome { get; set; }
         public string nome_empresa { get; set; }
         public string permissao { get; set; }
+        public int id_empresa { get; set; }
     }
 }
